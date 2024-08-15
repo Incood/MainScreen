@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import coil.compose.AsyncImage
 import com.example.mainscreen.R
 import com.example.mainscreen.data.Tour
@@ -46,7 +47,8 @@ fun ImageCard(tour: Tour) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(dimensionResource(id = R.dimen.padding_4xlarge))
-                        .clip(RoundedCornerShape(dimensionResource(id = R.dimen.padding_xsmall)))
+                        .clip(RoundedCornerShape(dimensionResource(id = R.dimen.padding_xsmall))),
+                    error = painterResource(id = R.drawable.ic_placeholder)
                 )
             }
 
