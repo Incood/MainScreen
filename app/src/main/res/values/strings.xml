@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MainScreen</string>
+    <string name="Makhachkala">Махачкала</string>
+    <string name="where_are_you_going">Куда вы едете?</string>
+    <string name="show_all">Показать все</string>
+
+    <string name="main">Главная</string>
+    <string name="tours">Туры</string>
+    <string name="avia_tickets">Авиабилеты</string>
+    <string name="hotels">Отели</string>
+    <string name="profile">Профиль</string>
+    <string name="choose_tours">Выбрать тур</string>
+    <string name="find_a_place_to_live">Подобрать жилье</string>
+    <string name="sorted_for">Сортировать по</string>
+    <string name="filter">Фильтр</string>
+    <string name="reviews">отзывов</string>
+    <string name="group_tour">Групповая экскурсия</string>
+    <string name="private_tour">Индивидуальная экскурсия</string>
+    <string name="hour">час</string>
+    <string name="hour_s">часа</string>
+    <string name="hours">часов</string>
+
+    <string name="all">Все</string>
+    <string name="multi_day_tour">Многодневный тур</string>
+    <string name="overview">Обзорная</string>
+    <string name="ethno">Этно</string>
+</resources>
