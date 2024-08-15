@@ -123,8 +123,8 @@ fun FilterSection() {
         Row(
             horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
             modifier = Modifier
-                .fillMaxWidth()
                 .height(24.dp)
+                .fillMaxWidth()
 
         ) {
             FilterButtonRow(stringResource(R.string.all), selectedFilter) {
@@ -460,6 +460,7 @@ fun TourListItem(tour: Tour) {
                         )
                     }
                     Row(
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_extra_short)),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
@@ -474,7 +475,6 @@ fun TourListItem(tour: Tour) {
                             tint = colorResource(id = R.color.light_grey),
                             modifier = Modifier
                                 .size(dimensionResource(id = R.dimen.padding_xmedium))
-                                .padding(start = dimensionResource(id = R.dimen.padding_extra_short))
                         )
                     }
                 }
