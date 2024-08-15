@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -28,6 +29,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -50,6 +52,9 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.mainscreen.data.Tour
 import com.example.mainscreen.viewModel.TourViewModel
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.rememberPagerState
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -209,6 +214,7 @@ fun FilterButton() {
     }
 }
 
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun TourListItem(tour: Tour) {
     val sfProRegular = FontFamily(
@@ -220,6 +226,9 @@ fun TourListItem(tour: Tour) {
     val sfProBold = FontFamily(
         Font(R.font.sf_pro_display_bold, FontWeight.Bold)
     )
+    val images = listOf(tour.coverImage) + tour.pictures.take(2).map { it.photo }
+    val pagerState = rememberPagerState()
+
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -231,20 +240,51 @@ fun TourListItem(tour: Tour) {
         Column {
             Box {
                 if (tour.coverImage != null) {
-                    AsyncImage(
-                        model = tour.coverImage,
-                        contentDescription = tour.name,
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(dimensionResource(id = R.dimen.padding_4xlarge))
-                            .clip(
-                                RoundedCornerShape(
-                                    topStart = dimensionResource(id = R.dimen.padding_xsmall),
-                                    topEnd = dimensionResource(id = R.dimen.padding_xsmall)
+                    Column {
+                        Box {
+                            HorizontalPager(
+                                count = images.size,
+                                state = pagerState,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(dimensionResource(id = R.dimen.padding_4xlarge))
+                            ) { page ->
+                                AsyncImage(
+                                    model = images[page],
+                                    contentDescription = null,
+                                    contentScale = ContentScale.Crop,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(dimensionResource(id = R.dimen.padding_4xlarge))
+                                        .clip(RoundedCornerShape(dimensionResource(id = R.dimen.padding_xsmall)))
                                 )
-                            )
-                    )
+                            }
+
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_short)),
+                                modifier = Modifier
+                                    .align(Alignment.TopEnd)
+                                    .padding(
+                                        top = dimensionResource(R.dimen.padding_extra_la),
+                                        end = dimensionResource(R.dimen.padding_extra_medium)
+                                    )
+                            ) {
+                                repeat(images.size) { index ->
+                                    Box(
+                                        modifier = Modifier
+                                            .size(dimensionResource(id = R.dimen.padding_extra_short))
+                                            .background(
+                                                if (index == pagerState.currentPage) colorResource(
+                                                    id = R.color.white
+                                                )
+                                                else colorResource(id = R.color.gray),
+                                                shape = RoundedCornerShape(50)
+                                            )
+                                    )
+                                }
+                            }
+                        }
+                    }
                 } else {
                     Box(
                         modifier = Modifier
@@ -311,27 +351,7 @@ fun TourListItem(tour: Tour) {
                         }
                     }
                 }
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_short)),
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(
-                            top = dimensionResource(id = R.dimen.padding_extra_la),
-                            end = dimensionResource(id = R.dimen.padding_extra_medium)
-                        )
-                ) {
-                    repeat(3) {
-                        Box(
-                            modifier = Modifier
-                                .size(dimensionResource(id = R.dimen.padding_extra_short))
-                                .background(
-                                    if (it == 0) colorResource(id = R.color.white)
-                                    else colorResource(id = R.color.gray),
-                                    shape = RoundedCornerShape(50)
-                                )
-                        )
-                    }
-                }
+
                 val formattedPrice = tour.adultPrice?.let {
                     val numberFormat = NumberFormat.getNumberInstance(Locale("ru", "RU"))
                     numberFormat.format(it.toDouble().toInt()) + " ₽"

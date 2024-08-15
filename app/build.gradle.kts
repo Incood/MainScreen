@@ -51,6 +51,8 @@ android {
 
 dependencies {
 
+    implementation("com.google.accompanist:accompanist-pager:0.24.13-rc")
+
     implementation("androidx.compose.animation:animation:1.6.8")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
