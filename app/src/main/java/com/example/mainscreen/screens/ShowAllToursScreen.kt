@@ -17,11 +17,11 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.mainscreen.screens.screensComponents.allToursComponents.FilterButtons.FilterButtonBottomScreen
-import com.example.mainscreen.screens.screensComponents.allToursComponents.FilterButtons.FilterButtonsRow
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListItem
-import com.example.mainscreen.CityHeader
+import com.example.mainscreen.screens.screensComponents.allToursScreen.filterButtons.FilterButtonBottomScreen
+import com.example.mainscreen.screens.screensComponents.allToursScreen.filterButtons.FilterButtonsRow
+import com.example.mainscreen.screens.screensComponents.allToursScreen.TourListItem
 import com.example.mainscreen.R
+import com.example.mainscreen.screens.screensComponents.mainScreenScreen.CityHeader
 import com.example.mainscreen.viewModel.TourViewModel
 
 @Composable
@@ -44,7 +44,7 @@ fun ShowAllToursScreen(viewModel: TourViewModel = viewModel()) {
             FilterButtonsRow()
             Divider(
                 color = colorResource(id = R.color.almost_white),
-                thickness = dimensionResource(id = R.dimen.padding_extra_small),
+                thickness = dimensionResource(id = R.dimen.padding_1dp),
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             LazyColumn {

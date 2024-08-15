@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.mainScreenComponents
+package com.example.mainscreen.screens.screensComponents.mainScreenScreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -32,7 +32,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.mainscreen.R
@@ -50,7 +49,7 @@ fun DisplayableItemCard(item: DisplayableItem) {
                 bottom = dimensionResource(R.dimen.padding_small),
                 end = dimensionResource(R.dimen.padding_medium)
             )
-            .width(158.dp)
+            .width(dimensionResource(R.dimen.padding_158dp))
     ) {
         if (item.coverImage != null) {
             var isLoading by remember { mutableStateOf(true) }
@@ -60,7 +59,7 @@ fun DisplayableItemCard(item: DisplayableItem) {
                     contentDescription = item.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .height(156.dp)
+                        .height(dimensionResource(R.dimen.padding_156dp))
                         .clip(RoundedCornerShape(dimensionResource(R.dimen.padding_small))),
                     onSuccess = { isLoading = false },
                     onError = { isLoading = false }
@@ -74,8 +73,8 @@ fun DisplayableItemCard(item: DisplayableItem) {
         } else {
             Box(
                 modifier = Modifier
-                    .width(158.dp)
-                    .height(156.dp)
+                    .width(dimensionResource(R.dimen.padding_158dp))
+                    .height(dimensionResource(R.dimen.padding_156dp))
                     .fillMaxWidth()
                     .background(colorResource(id = R.color.gray))
                     .clip(RoundedCornerShape(dimensionResource(R.dimen.padding_small))),

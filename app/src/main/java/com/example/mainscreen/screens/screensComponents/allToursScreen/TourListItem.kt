@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.allToursComponents
+package com.example.mainscreen.screens.screensComponents.allToursScreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,11 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails.ImageCard
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails.ImagePlaceHolder
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails.ReviewAndRating
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails.TourNameAndDetails
-import com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails.TypeAndPrice
+import com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails.ImageCard
+import com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails.ImagePlaceHolder
+import com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails.ReviewAndRating
+import com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails.TourNameAndDetails
+import com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails.TypeAndPrice
 import com.example.mainscreen.R
 import com.example.mainscreen.data.Tour
 
@@ -28,7 +28,7 @@ fun TourListItem(tour: Tour) {
             .padding(bottom = dimensionResource(R.dimen.padding_medium)),
         shape = RoundedCornerShape(dimensionResource(id = R.dimen.padding_small)),
         colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.white)),
-        elevation = CardDefaults.cardElevation(defaultElevation = dimensionResource(id = R.dimen.padding_extra_small))
+        elevation = CardDefaults.cardElevation(defaultElevation = dimensionResource(id = R.dimen.padding_1dp))
     ) {
         Column {
             Box {

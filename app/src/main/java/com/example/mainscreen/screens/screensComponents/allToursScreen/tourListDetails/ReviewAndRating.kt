@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails
+package com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,7 +21,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mainscreen.R
 import com.example.mainscreen.data.Tour
@@ -58,7 +57,7 @@ fun ReviewAndRating(tour: Tour) {
                 )
         )
         Row(
-            horizontalArrangement = Arrangement.spacedBy(4.dp),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_short)),
             modifier = Modifier
                 .align(Alignment.CenterVertically)
                 .padding(

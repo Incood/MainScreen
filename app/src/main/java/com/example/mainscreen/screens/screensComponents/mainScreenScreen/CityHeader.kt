@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.mainScreenComponents
+package com.example.mainscreen.screens.screensComponents.mainScreenScreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +17,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mainscreen.R
 
@@ -36,9 +35,9 @@ fun CityHeader(cityName: String) {
         Column(
             modifier = Modifier
                 .padding(
-                    start = 11.dp,
-                    top = 10.dp,
-                    bottom = 10.dp
+                    start = dimensionResource(id = R.dimen.padding_11dp),
+                    top = dimensionResource(id = R.dimen.padding_xsmall),
+                    bottom = dimensionResource(id = R.dimen.padding_xsmall)
                 )
         ) {
             Text(
@@ -49,7 +48,7 @@ fun CityHeader(cityName: String) {
                     color = colorResource(id = R.color.light_grey)
                 )
             )
-            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_extra_small)))
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_1dp)))
             Text(
                 text = cityName,
                 style = TextStyle(

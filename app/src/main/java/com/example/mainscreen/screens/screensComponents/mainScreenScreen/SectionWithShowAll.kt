@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.mainScreenComponents
+package com.example.mainscreen.screens.screensComponents.mainScreenScreen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

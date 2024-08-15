@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_extra_small">1dp</dimen>
+    <dimen name="padding_1dp">1dp</dimen>
     <dimen name="padding_short">4dp</dimen>
     <dimen name="padding_xshort">5dp</dimen>
     <dimen name="padding_extra_short">6dp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_xsmall">10dp</dimen>
+    <dimen name="padding_11dp">11dp</dimen>
     <dimen name="padding_extra_medium">12dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_xmedium">18dp</dimen>
@@ -15,6 +16,9 @@
     <dimen name="padding_large">24dp</dimen>
     <dimen name="padding_2xlarge">30dp</dimen>
     <dimen name="padding_2_1xlarge">32dp</dimen>
+    <dimen name="padding_2_2xlarge">33dp</dimen>
+    <dimen name="padding_156dp">156dp</dimen>
+    <dimen name="padding_158dp">158dp</dimen>
     <dimen name="padding_3xlarge">160dp</dimen>
     <dimen name="padding_4xlarge">216dp</dimen>
 </resources>

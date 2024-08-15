@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.allToursComponents.FilterButtons
+package com.example.mainscreen.screens.screensComponents.allToursScreen.filterButtons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

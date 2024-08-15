@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.allToursComponents.TourListDetails
+package com.example.mainscreen.screens.screensComponents.allToursScreen.tourListDetails
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

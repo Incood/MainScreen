@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.mainScreenComponents
+package com.example.mainscreen.screens.screensComponents.mainScreenScreen
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -6,8 +6,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.example.mainscreen.R
 import com.example.mainscreen.data.Hotel
 
@@ -23,7 +23,7 @@ fun HotelsSection(modifier: Modifier = Modifier) {
         onShowAllClick = { },
         modifier = modifier
     ) {
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
         LazyRow {
             items(hotels) { hotel ->
                 DisplayableItemCard(hotel)

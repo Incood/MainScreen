@@ -17,9 +17,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.mainscreen.R
 import com.example.mainscreen.data.Screen
-import com.example.mainscreen.screens.screensComponents.mainScreenComponents.CityHeader
-import com.example.mainscreen.screens.screensComponents.mainScreenComponents.HotelsSection
-import com.example.mainscreen.screens.screensComponents.mainScreenComponents.ToursSection
+import com.example.mainscreen.screens.screensComponents.mainScreenScreen.CityHeader
+import com.example.mainscreen.screens.screensComponents.mainScreenScreen.HotelsSection
+import com.example.mainscreen.screens.screensComponents.mainScreenScreen.ToursSection
 import com.example.mainscreen.viewModel.TourViewModel
 
 @Composable
@@ -40,7 +40,7 @@ fun MainScreen(navController: NavController, viewModel: TourViewModel = viewMode
         CityHeader(cityName = stringResource(R.string.Makhachkala))
         Divider(
             color = colorResource(id = R.color.almost_white),
-            thickness = dimensionResource(id = R.dimen.padding_extra_small),
+            thickness = dimensionResource(id = R.dimen.padding_1dp),
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
         )
         Box(modifier = Modifier.fillMaxSize()) {

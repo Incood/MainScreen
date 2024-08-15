@@ -1,4 +1,4 @@
-package com.example.mainscreen.screens.screensComponents.allToursComponents.FilterButtons
+package com.example.mainscreen.screens.screensComponents.allToursScreen.filterButtons
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
@@ -33,12 +33,12 @@ fun FilterButton(text: String, selectedFilter: String, onClick: () -> Unit) {
         ),
         shape = RoundedCornerShape(33.dp),
         border = if (!isSelected) BorderStroke(
-            dimensionResource(id = R.dimen.padding_extra_small),
+            dimensionResource(id = R.dimen.padding_1dp),
             colorResource(id = R.color.dark_blue)
         ) else null,
         contentPadding = PaddingValues(
             horizontal = dimensionResource(id = R.dimen.padding_xsmall),
-            vertical = dimensionResource(id = R.dimen.padding_extra_small)
+            vertical = dimensionResource(id = R.dimen.padding_1dp)
         )
     ) {
         Text(
